@@ -1,0 +1,30 @@
+spring.application.name: officeflow
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/office-flow-db
+    username: admin
+    password: admin123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+  servlet:
+    multipart:
+      enabled: true
+  security:
+    user:
+      name: user
+      password: user123
+      roles: USER
+logging:
+  level:
+    org.hibernate.SQL: off
+    org.hibernate.type: off
+

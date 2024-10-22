@@ -1,0 +1,8 @@
+# Empacotar a aplicação para subir no container docker
+mvn clean package
+
+# Roda somente o container do postgresql para ambiente de desenvolvimentoss
+docker-compose up --build
+
+# Roda o container do postgresql e spring
+docker-compose -f docker-compose.release.yml up --build
